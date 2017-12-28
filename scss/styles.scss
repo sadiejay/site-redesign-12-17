@@ -1,28 +1,14 @@
 :root{
-	font-size: 16px;
+	font-size: 14px;
 }
 
 @import url(https://fonts.googleapis.com/css?family=Lato);
-@import "_properties";
-@import "_attention-seekers/attention-seekers.scss";
-//"_bouncing-entrances/bouncing-entrances.scss",
-//"_bouncing-exits/bouncing-exits.scss",
-//"_fading-entrances/fading-entrances.scss",
-//"_fading-exits/fading-exits.scss",
-//"_flippers/flippers.scss",
-//"_lightspeed/lightspeed.scss",
-//"_rotating-entrances/rotating-entrances.scss",
-//"_rotating-exits/rotating-exits.scss",
-//"_specials/specials.scss";
 @import "index";
 @import "about";
-@import "blog";
-@import "blog-single";
-@import "tour";
-@import "tour-single";
-@import "contact";
 
-* {
+*,
+*::before,
+*::after {
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -34,59 +20,3 @@ body{
   background-color: $white;
 
 }
-
-nav{
-  display: flex;
-  align-items: center;
-	justify-content: space-evenly;
-  background-color: lighter($teal);
-  width: 100%;
-
-  &.nav__logo{
-    display: inline;
-    text-align: right;
-  }
-
-  h1{
-    font-size: 2.5rem;
-    display: inline;
-  }
-
-  &.nav__logo{
-    display: inline;
-    text-align: left;
-  }
-
-	ul{
-		color: $black;
-
-  	li{
-    	display: inline;
-    	//margin: ;
-    	padding: 0 .5rem;
-    	font-size: 1.1rem;
-			color: $black;
-			@include no-bullets;
-			@include no-underline;
-
-			 a{
-				color: $black;
-
-				&:link, &:visited, &:active{
-					text-decoration: none;
-					color: $black;
-
-				}
-
-				&:hover{
-					@include pulse();
-					//background-color: darker($blue);
-					border-bottom:: 1px solid darker($blue);
-					//padding: 5px;
-				}
-			}
-
-		}
-  }
-
-} //nav
