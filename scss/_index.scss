@@ -1,3 +1,181 @@
 @import "var";
 
-//header
+// container
+.container {
+	width: 100vw;
+	background-color: $purple;
+}
+
+
+
+//nav
+nav {
+/*
+	background-image:
+		url("../images/cloud.png"),
+		url("../images/tri.png");
+	background-size: cover;
+*/
+
+	h1 {
+		font-family: 'Zilla Slab', serif;
+		font-size: 2.7rem;
+		font-weight: bolder;
+	}
+
+	ul {
+		color: $black;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		@include no-bullets;
+		@include no-underline;	
+	
+		li {
+			padding: 1rem 0.5rem;
+			border-bottom: solid light($gold) 3px;
+			width: 100vw;
+			text-align: center;
+
+			&.nav--logo {
+				background-image:
+					url("../images/cloud.png"),
+					url("../images/tri.png"),
+					linear-gradient(
+					  	to bottom right, 
+					 	$purple, light($gold)
+					 	);
+				background-size: cover;
+			}
+
+			&.nav--button {
+				font-size: 1.6rem;
+
+				a{
+					&:hover {
+					color: light($gold);
+					}
+				}
+			}
+
+			a {
+
+				&:link, &:visited, &:active{
+
+					@include no-underline;
+					color: $black;
+
+				}
+
+				
+			}
+		}
+
+	}
+
+} //nav
+
+main {
+	display: flex;
+	flex-direction: column;
+
+
+}
+
+header {
+	text-align: center;
+	padding: 1rem 0.5rem;
+	color: light($purple);
+	font-family: 'Zilla Slab', serif;
+	font-size: 1.4rem;
+}
+
+section {
+	padding: 1rem 0.5rem;
+	display: flex;
+	flex-direction: column;
+
+	h3 {
+		font-family: 'Zilla Slab', serif;
+		font-size: 1.6rem;
+	}
+
+	h4 {
+		font-family: 'Zilla Slab', serif;
+		font-size: 1.4rem;
+		border-top: dotted 5px lighter($gold);
+		padding-top: 1rem;
+	}
+	
+	p {
+		font-family: 'Open Sans', sans-serif;
+		font-size: 1rem;
+		line-height: 1.8rem;
+	}
+
+	&.project {
+		background-color: lighter($grey);
+
+		p {
+			padding-bottom: 1.5rem;
+		}
+	}
+}
+
+
+
+article {
+	padding: 1rem 0rem;
+
+	img{
+		box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
+	}
+
+	div {
+		padding-top: 1rem;
+	}
+}
+
+.more {
+	font-family: 'Zilla Slab', serif;
+	font-size: 1.4rem;
+
+	h2 {
+		padding: 1rem 0.5rem;
+
+		&.more--right {
+		color: light($purple);
+		}
+	}
+}
+
+.contact {
+
+	h3 {
+		border-top: dotted 5px lighter($gold);
+	}
+
+	h3, ul {
+		padding-top: 1rem;
+	}
+
+	ul {
+		font-size: 1.2rem;
+		font-family: 'Zilla Slab', serif
+
+	}
+
+	a {
+
+		&:link, &:visited, &:active{
+
+			@include no-underline;
+			color: $black;
+
+		}
+
+		&:hover {
+					color: light($gold);
+					}
+	}
+}
