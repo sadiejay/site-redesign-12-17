@@ -1,1 +1,10 @@
 @import "var";
+
+.skill {
+	background-color: lighter($grey);
+}
+
+h3{
+	border-top: dotted 5px lighter($gold);
+	padding-top: 1rem;
+}
