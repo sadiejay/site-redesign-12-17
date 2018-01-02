@@ -6,105 +6,133 @@
 	background-color: $purple;
 }
 
+h1, header, h3, h4, .more, .contact ul {
+	font-family: 'Zilla Slab', serif;
+}
 
-
-//nav
-nav {
-/*
-	background-image:
-		url("../images/cloud.png"),
-		url("../images/tri.png");
-	background-size: cover;
-*/
-
-	h1 {
-		font-family: 'Zilla Slab', serif;
-		font-size: 2.7rem;
-		font-weight: bolder;
+.wrapper, .contact h3, .contact ul, h4 {
+		padding-top: 1rem;
 	}
 
-	ul {
-		color: $black;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		@include no-bullets;
-		@include no-underline;	
-	
-		li {
-			padding: 1rem 0.5rem;
+
+ul {
+	color: $black;
+	align-items: flex-start;
+	@include no-bullets;
+	@include no-underline;	
+
+	li {
+		line-height: 1.8rem;
+		
+		&.nav--logo, &.nav--button{
 			border-bottom: solid light($gold) 3px;
 			width: 100vw;
 			text-align: center;
 
-			&.nav--logo {
-				background-image:
-					url("../images/cloud.png"),
-					url("../images/tri.png"),
-					linear-gradient(
-					  	to bottom right, 
-					 	$purple, light($gold)
-					 	);
-				background-size: cover;
+			@include breakpoint('small') {
+				width: auto;
+				border-bottom: none;
 			}
+		}
 
-			&.nav--button {
-				font-size: 1.6rem;
+		&.nav--logo {
+			background-image:
+				url("../images/cloud.png"),
+				url("../images/tri.png"),
+				linear-gradient(
+				  	to bottom right, 
+				 	$purple, light($gold)
+				 	);
+			background-size: cover;
 
-				a{
-					&:hover {
-					color: light($gold);
-					}
+			@include breakpoint('small') {
+				background: inherit;
+			}
+		}
+
+		&.nav--button {
+			font-size: 1.6rem;
+
+			a{
+				&:hover {
+				color: lightest($gold);
 				}
 			}
+		}
 
-			a {
+		a {
 
-				&:link, &:visited, &:active{
+			&:link, &:visited, &:active{
 
-					@include no-underline;
-					color: $black;
+				@include no-underline;
+				color: $black;
 
-				}
-
-				
 			}
+
+			
 		}
 
 	}
 
-} //nav
-
-main {
-	display: flex;
-	flex-direction: column;
 
 
 }
 
+header, section, .more h2, .nav--button, .nav--logo{
+	padding: 1rem 0.5rem;
+}
+
+main, section, ul {
+	display: flex;
+	flex-direction: column;
+}
+
+//nav
+nav {
+
+	@include breakpoint('small') {
+			background-image:
+				url("../images/cloud.png"),
+				url("../images/tri.png"),
+				linear-gradient(
+				  	192deg, 
+				 	$purple, light($gold)
+				 	);
+			background-size: cover;
+		}
+
+	h1 {
+		font-size: 2.7rem;
+		font-weight: bolder;
+	}
+
+	.nav {
+		@include breakpoint('small') {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			align-items: baseline;
+		}
+	}
+
+} //nav
+
+
 header {
 	text-align: center;
-	padding: 1rem 0.5rem;
 	color: light($purple);
-	font-family: 'Zilla Slab', serif;
 	font-size: 1.4rem;
 }
 
 section {
-	padding: 1rem 0.5rem;
-	display: flex;
-	flex-direction: column;
-
+	
 	h3 {
-		font-family: 'Zilla Slab', serif;
 		font-size: 1.6rem;
 	}
 
 	h4 {
-		font-family: 'Zilla Slab', serif;
 		font-size: 1.4rem;
 		border-top: dotted 5px lighter($gold);
-		padding-top: 1rem;
 	}
 	
 	p {
@@ -128,19 +156,20 @@ article {
 	padding: 1rem 0rem;
 }
 
-.wrapper {
-	padding-top: 1rem;
-}
 
 .more {
-	font-family: 'Zilla Slab', serif;
 	font-size: 1.4rem;
 
 	h2 {
-		padding: 1rem 0.5rem;
 
 		&.more--right {
-		color: light($purple);
+			color: light($purple);
+		}
+
+		&.more--center{
+			@include breakpoint('small') {
+    			text-align: center;
+    		}
 		}
 	}
 }
@@ -151,13 +180,8 @@ article {
 		border-top: dotted 5px lighter($gold);
 	}
 
-	h3, ul {
-		padding-top: 1rem;
-	}
-
 	ul {
 		font-size: 1.2rem;
-		font-family: 'Zilla Slab', serif
 
 	}
 

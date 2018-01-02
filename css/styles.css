@@ -4,6 +4,17 @@
   font-size: 14px;
 }
 
+/* use
+
+ .selector {
+  color: red;
+  
+  @include breakpoint('small') {
+    color: blue;
+  }
+}
+
+  */
 /* 							to insert img
 .logo {
  		path('logo.png')left top no-repeat;/
@@ -40,48 +51,42 @@ ul {
   background-color: #a99bbf;
 }
 
-nav {
-  /*
-	background-image:
-		url("../images/cloud.png"),
-		url("../images/tri.png");
-	background-size: cover;
-*/
-}
-
-nav h1 {
+h1, header, h3, h4, .more, .contact ul {
   font-family: 'Zilla Slab', serif;
-  font-size: 2.7rem;
-  font-weight: bolder;
 }
 
-nav ul {
+.wrapper, .contact h3, .contact ul, h4 {
+  padding-top: 1rem;
+}
+
+ul {
   color: #0b120c;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
   list-style: none;
   text-decoration: none;
 }
 
-nav ul li {
-  padding: 1rem 0.5rem;
+ul li {
+  line-height: 1.8rem;
+}
+
+ul li.nav--logo, ul li.nav--button {
   border-bottom: solid #d8ab6c 3px;
   width: 100vw;
   text-align: center;
 }
 
-nav ul li.nav--logo {
+@media (min-width: 640px) {
+  ul li.nav--logo, ul li.nav--button {
+    width: auto;
+    border-bottom: none;
+  }
+}
+
+ul li.nav--logo {
   background-image: url("../images/cloud.png"), url("../images/tri.png"), -webkit-gradient(linear, left top, right bottom, from(#a99bbf), to(#d8ab6c));
   background-image: url("../images/cloud.png"), url("../images/tri.png"), -webkit-linear-gradient(top left, #a99bbf, #d8ab6c);
   background-image: url("../images/cloud.png"), url("../images/tri.png"), -o-linear-gradient(top left, #a99bbf, #d8ab6c);
@@ -89,20 +94,30 @@ nav ul li.nav--logo {
   background-size: cover;
 }
 
-nav ul li.nav--button {
+@media (min-width: 640px) {
+  ul li.nav--logo {
+    background: inherit;
+  }
+}
+
+ul li.nav--button {
   font-size: 1.6rem;
 }
 
-nav ul li.nav--button a:hover {
-  color: #d8ab6c;
+ul li.nav--button a:hover {
+  color: #fcf8f2;
 }
 
-nav ul li a:link, nav ul li a:visited, nav ul li a:active {
+ul li a:link, ul li a:visited, ul li a:active {
   text-decoration: none;
   color: #0b120c;
 }
 
-main {
+header, section, .more h2, .nav--button, .nav--logo {
+  padding: 1rem 0.5rem;
+}
+
+main, section, ul {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -112,39 +127,57 @@ main {
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+}
+
+@media (min-width: 640px) {
+  nav {
+    background-image: url("../images/cloud.png"), url("../images/tri.png"), -webkit-linear-gradient(258deg, #a99bbf, #d8ab6c);
+    background-image: url("../images/cloud.png"), url("../images/tri.png"), -o-linear-gradient(258deg, #a99bbf, #d8ab6c);
+    background-image: url("../images/cloud.png"), url("../images/tri.png"), linear-gradient(192deg, #a99bbf, #d8ab6c);
+    background-size: cover;
+  }
+}
+
+nav h1 {
+  font-size: 2.7rem;
+  font-weight: bolder;
+}
+
+@media (min-width: 640px) {
+  nav .nav {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: baseline;
+    -webkit-align-items: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
+  }
 }
 
 header {
   text-align: center;
-  padding: 1rem 0.5rem;
   color: #d6cfe0;
-  font-family: 'Zilla Slab', serif;
   font-size: 1.4rem;
 }
 
-section {
-  padding: 1rem 0.5rem;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-}
-
 section h3 {
-  font-family: 'Zilla Slab', serif;
   font-size: 1.6rem;
 }
 
 section h4 {
-  font-family: 'Zilla Slab', serif;
   font-size: 1.4rem;
   border-top: dotted 5px #ead1af;
-  padding-top: 1rem;
 }
 
 section p {
@@ -165,34 +198,26 @@ article {
   padding: 1rem 0rem;
 }
 
-.wrapper {
-  padding-top: 1rem;
-}
-
 .more {
-  font-family: 'Zilla Slab', serif;
   font-size: 1.4rem;
-}
-
-.more h2 {
-  padding: 1rem 0.5rem;
 }
 
 .more h2.more--right {
   color: #d6cfe0;
 }
 
+@media (min-width: 640px) {
+  .more h2.more--center {
+    text-align: center;
+  }
+}
+
 .contact h3 {
   border-top: dotted 5px #ead1af;
 }
 
-.contact h3, .contact ul {
-  padding-top: 1rem;
-}
-
 .contact ul {
   font-size: 1.2rem;
-  font-family: 'Zilla Slab', serif;
 }
 
 .contact a:link, .contact a:visited, .contact a:active {
@@ -204,6 +229,17 @@ article {
   color: #d8ab6c;
 }
 
+/* use
+
+ .selector {
+  color: red;
+  
+  @include breakpoint('small') {
+    color: blue;
+  }
+}
+
+  */
 /* 							to insert img
 .logo {
  		path('logo.png')left top no-repeat;/
@@ -239,7 +275,7 @@ ul {
   background-color: #ececec;
 }
 
-h3 {
+.contact h3, .skill h3 {
   border-top: dotted 5px #ead1af;
   padding-top: 1rem;
 }
