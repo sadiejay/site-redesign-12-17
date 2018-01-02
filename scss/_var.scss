@@ -47,6 +47,18 @@ $breakpoints: (
 	}
 }
 
+/* use
+
+ .selector {
+  color: red;
+  
+  @include breakpoint('small') {
+    color: blue;
+  }
+}
+
+  */
+
 
 
 
