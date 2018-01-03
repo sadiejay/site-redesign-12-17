@@ -4,6 +4,15 @@
 	background-color: lighter($grey);
 }
 
+.skill--design, .skill--soft {
+	@include breakpoint('small') {
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		align-items: baseline;
+	}
+}
+
 .contact h3, .skill h3{
 	border-top: dotted 5px lighter($gold);
 	padding-top: 1rem;
