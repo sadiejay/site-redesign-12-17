@@ -1,15 +1,79 @@
 @import "var";
 
+.about--text {
+	@include breakpoint('small') {
+		grid-area: about;
+	}
+}
+
+.about {
+
+	@include breakpoint('small') {
+		img {
+			grid-area: img;
+		}
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 20px;
+		grid-template-rows:auto;
+		grid-template-areas:
+		"img about"
+		"img about"
+	}
+}
+
 .skill {
+
+	.skill--soft{
+		grid-area: soft;
+	}
+
+	.skill--design {
+		grid-area: design;
+	}
+
 	background-color: lighter($grey);
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: auto;
+	grid-row-gap: 1rem;
+	grid-template-areas:
+	"soft"
+	"design";
+}
+
+.skill--title{
+	grid-area: title;
+}
+
+.skill--list {
+	grid-area: list;
+	justify-self: center;
+
 }
 
 .skill--design, .skill--soft {
 	@include breakpoint('small') {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-between;
-		align-items: baseline;
+		//display: flex;
+		//flex-flow: row wrap;
+		//justify-content: space-between;
+		//align-items: baseline;
+
+		ul:nth-child(2){
+			grid-area: list--2;
+			justify-self: center;
+		}
+
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: 20px;
+		grid-template-rows:auto;
+		align-items: stretch;
+		grid-template-areas:
+		"title title title title"
+		". . list--2 list";
+		
 	}
 }
 

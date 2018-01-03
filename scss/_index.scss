@@ -78,7 +78,6 @@ ul {
 
 }
 
-header, section, .more h2, .nav--button, .nav--logo{
 	padding: 1rem 0.5rem;
 }
 
@@ -156,6 +155,34 @@ article {
 	padding: 1rem 0rem;
 }
 
+.project--title {
+	@include breakpoint('portrait') {
+		grid-area: title;
+	}
+}
+
+.project--about {
+	@include breakpoint('portrait') {
+		grid-area: about;
+	}
+}
+
+.project--1, .project--2 {
+
+	@include breakpoint('portrait') {
+		img {
+			grid-area: img;
+		}
+
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 20px;
+		grid-template-rows:auto;
+		grid-template-areas:
+		"title title"
+		"img about"
+	}
+}
 
 .more {
 	font-size: 1.4rem;
