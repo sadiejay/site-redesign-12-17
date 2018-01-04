@@ -25,13 +25,14 @@ ul {
 		line-height: 1.8rem;
 		
 		&.nav--logo, &.nav--button{
-			border-bottom: solid light($gold) 3px;
+			box-shadow: 0 1.1px 5px 0 rgba(11, 18, 12, .5);
 			width: 100vw;
 			text-align: center;
 
+
 			@include breakpoint('small') {
 				width: auto;
-				border-bottom: none;
+				box-shadow: none;
 			}
 		}
 
@@ -156,6 +157,10 @@ article {
 	padding: 1rem 0rem;
 }
 
+iframe {
+	max-width: 100%;
+}
+
 .project--title {
 	@include breakpoint('portrait') {
 		grid-area: title;
@@ -168,16 +173,16 @@ article {
 	}
 }
 
-.project--1, .project--2 {
+.project--1, .project--2, .project--3 {
 	box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
 
 	@include breakpoint('portrait') {
-		img {
+		img, iframe {
 			grid-area: img;
 		}
-
+		overflow: hidden;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: auto;
 		grid-gap: 20px;
 		grid-template-rows:auto;
 		grid-template-areas:

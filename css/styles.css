@@ -74,7 +74,8 @@ ul li {
 }
 
 ul li.nav--logo, ul li.nav--button {
-  border-bottom: solid #d8ab6c 3px;
+  -webkit-box-shadow: 0 1.1px 5px 0 rgba(11, 18, 12, 0.5);
+  box-shadow: 0 1.1px 5px 0 rgba(11, 18, 12, 0.5);
   width: 100vw;
   text-align: center;
 }
@@ -82,7 +83,8 @@ ul li.nav--logo, ul li.nav--button {
 @media (min-width: 640px) {
   ul li.nav--logo, ul li.nav--button {
     width: auto;
-    border-bottom: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
   }
 }
 
@@ -198,6 +200,10 @@ article {
   padding: 1rem 0rem;
 }
 
+iframe {
+  max-width: 100%;
+}
+
 @media (min-width: 768px) {
   .project--title {
     grid-area: title;
@@ -210,20 +216,21 @@ article {
   }
 }
 
-.project--1, .project--2 {
+.project--1, .project--2, .project--3 {
   -webkit-box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 768px) {
-  .project--1, .project--2 {
+  .project--1, .project--2, .project--3 {
+    overflow: hidden;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto;
     grid-gap: 20px;
     grid-template-rows: auto;
     grid-template-areas: "title title" "img about";
   }
-  .project--1 img, .project--2 img {
+  .project--1 img, .project--1 iframe, .project--2 img, .project--2 iframe, .project--3 img, .project--3 iframe {
     grid-area: img;
   }
 }
@@ -307,13 +314,32 @@ ul {
   }
 }
 
+.about {
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: auto;
+  justify-items: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  grid-row-gap: 1rem;
+  grid-template-areas: "img" "about";
+}
+
 @media (min-width: 640px) {
   .about {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     grid-template-rows: auto;
-    grid-template-areas: "img about" "img about";
+    justify-items: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-template-areas: "img about";
   }
   .about img {
     grid-area: img;
