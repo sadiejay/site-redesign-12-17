@@ -347,51 +347,89 @@ ul {
 }
 
 .skill {
+  background-color: #ececec;
   -webkit-box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
   box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
-  background-color: #ececec;
   display: grid;
-  grid-template-rows: 1fr 1fr;
   grid-template-columns: auto;
-  grid-row-gap: 1rem;
-  grid-template-areas: "soft" "design";
+  grid-gap: 1rem;
+  grid-template-rows: auto;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+  -ms-flex-align: stretch;
+  align-items: stretch;
+  grid-template-areas: "title--soft title--soft ." ". list--soft list2--soft" "title--design title--design ." ". list--design list2--design";
+  /* testing --
+	background-color: lighter($grey);
+	display: grid;
+	grid-template-rows: auto;
+	grid-template-columns: auto;
+	grid-row-gap: 1rem;
+	grid-template-areas:
+	"soft"
+	"design";
+	*/
 }
 
-.skill .skill--soft {
-  grid-area: soft;
+.skill .skill--soft .skill--title {
+  grid-area: title--soft;
 }
 
-.skill .skill--design {
-  grid-area: design;
+.skill .skill--soft .skill--list {
+  grid-area: list--soft;
 }
 
-.skill--title {
-  grid-area: title;
+.skill .skill--soft .skill--list2 {
+  grid-area: list2--soft;
 }
+
+.skill .skill--design .skill--title {
+  grid-area: title--design;
+}
+
+.skill .skill--design .skill--list {
+  grid-area: list--design;
+}
+
+.skill .skill--design .skill--list2 {
+  grid-area: list2--design;
+}
+
+/*
+.skill--title{
+	//grid-area: title;
+	grid-area: skill--title;
+}
+
 
 .skill--list {
-  grid-area: list;
-  justify-self: center;
+	//grid-area: list;
+	grid-area: skill--list;
+	justify-self: center;
+
 }
 
-@media (min-width: 640px) {
-  .skill--design, .skill--soft {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 20px;
-    grid-template-rows: auto;
-    -webkit-box-align: stretch;
-    -webkit-align-items: stretch;
-    -ms-flex-align: stretch;
-    align-items: stretch;
-    grid-template-areas: "title title title title" ". . list--2 list";
-  }
-  .skill--design ul:nth-child(2), .skill--soft ul:nth-child(2) {
-    grid-area: list--2;
-    justify-self: center;
-  }
-}
 
+.skill--design, .skill--soft {
+	@include breakpoint('small') {
+
+		ul:nth-child(2){
+			grid-area: list--2;
+			justify-self: center;
+		}
+
+		display: grid;
+		grid-template-columns: auto;
+		grid-gap: 1rem;
+		grid-template-rows:auto;
+		align-items: stretch;
+		grid-template-areas:
+		"title title ."
+		". list--2 list";
+		
+	}
+}
+*/
 .contact h3, .skill h3 {
   border-top: dotted 5px #ead1af;
   padding-top: 1rem;
