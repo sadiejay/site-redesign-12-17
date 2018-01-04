@@ -262,8 +262,23 @@ iframe {
   }
 }
 
+.contact {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 20px;
+  grid-template-rows: auto;
+  grid-template-areas: "title" "info" "social";
+}
+
 .contact h3 {
   border-top: dotted 5px #ead1af;
+  color: white;
+}
+
+@media (min-width: 640px) {
+  .contact h3 {
+    font-size: 1.8rem;
+  }
 }
 
 .contact ul {
@@ -283,6 +298,77 @@ iframe {
 
 .contact a:hover {
   color: #d8ab6c;
+}
+
+.contact .mask {
+  background: white;
+  width: 4rem;
+  height: 4rem;
+}
+
+.contact .mask .in--mask, .contact .mask .gh--mask {
+  z-index: 4;
+  position: relative;
+  display: inline-block;
+}
+
+.contact .mask .in--mask a, .contact .mask .gh--mask a {
+  content: '';
+  position: relative;
+  display: inline-block;
+}
+
+.contact .mask .in--mask a:after, .contact .mask .gh--mask a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.contact .in--mask {
+  -webkit-mask: url("../images/linkedin.svg") center center no-repeat;
+  mask: url("../images/linkedin.svg") center center no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+.contact .gh--mask {
+  -webkit-mask: url("../images/gh.svg") center center no-repeat;
+  mask: url("../images/gh.svg") center center no-repeat;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+}
+
+.contact .contact--title {
+  grid-area: title;
+}
+
+.contact .contact--info {
+  grid-area: info;
+}
+
+.contact .contact--social {
+  grid-area: social;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+
+@media (min-width: 640px) {
+  .contact {
+    grid-template-areas: "title info social";
+  }
 }
 
 /* use

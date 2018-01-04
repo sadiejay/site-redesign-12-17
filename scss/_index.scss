@@ -259,6 +259,77 @@ iframe {
 
 		&:hover {
 					color: light($gold);
-					}
+		}
 	}
+
+	.mask {
+		background: lighter($purple);
+		width: 4rem;
+		height: 4rem;
+
+		.in--mask, .gh--mask {
+			z-index: 4;
+			position: relative;
+			display: inline-block;
+
+			& a{
+			content: '';
+			position: relative;
+			display: inline-block;
+
+
+				&:after {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				}
+			}
+		}
+	}
+
+	.in--mask {
+		mask: url('../images/linkedin.svg') center center no-repeat;
+		mask-size: cover;
+	}
+
+	.gh--mask {
+		mask: url('../images/gh.svg') center center no-repeat;
+		mask-size: cover;
+	}
+
+	// grid
+
+	.contact--title{
+		grid-area: title;
+	}
+
+	.contact--info{
+		grid-area: info;
+	}
+
+	.contact--social{
+		grid-area: social;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
+	}
+
+	display: grid;
+	grid-template-columns: auto;
+	grid-gap: 20px;
+	grid-template-rows: auto;
+	grid-template-areas:
+	"title"
+	"info"
+	"social";
+
+	@include breakpoint('small') {
+		grid-template-areas:
+		"title info social";
+
+	}
+
 }
