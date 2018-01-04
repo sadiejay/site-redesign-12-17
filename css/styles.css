@@ -200,6 +200,19 @@ article {
   padding: 1rem 0rem;
 }
 
+article p a:link, article p a:visited, article p a:active {
+  text-decoration: none;
+  color: #745f95;
+}
+
+article p a:hover {
+  color: #d8ab6c;
+}
+
+article p:nth-child(1) {
+  font-style: italic;
+}
+
 iframe {
   max-width: 100%;
 }
@@ -254,7 +267,13 @@ iframe {
 }
 
 .contact ul {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
+}
+
+@media (min-width: 640px) {
+  .contact ul {
+    font-size: 1.5rem;
+  }
 }
 
 .contact a:link, .contact a:visited, .contact a:active {

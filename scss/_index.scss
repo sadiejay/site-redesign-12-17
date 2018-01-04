@@ -41,9 +41,9 @@ ul {
 				url("../images/cloud.png"),
 				url("../images/tri.png"),
 				linear-gradient(
-				  	to bottom right, 
-				 	$purple, light($gold)
-				 	);
+					to bottom right, 
+					$purple, light($gold)
+					);
 			background-size: cover;
 
 			@include breakpoint('small') {
@@ -96,9 +96,9 @@ nav {
 				url("../images/cloud.png"),
 				url("../images/tri.png"),
 				linear-gradient(
-				  	192deg, 
-				 	$purple, light($gold)
-				 	);
+					192deg, 
+					$purple, light($gold)
+					);
 			background-size: cover;
 		}
 
@@ -155,6 +155,26 @@ section {
 
 article {
 	padding: 1rem 0rem;
+
+	p {
+		a {
+			&:link, &:visited, &:active {
+
+			@include no-underline;
+			color: darkest($purple);
+
+			}
+
+			&:hover {
+						color: light($gold);
+					}
+		}
+
+		&:nth-child(1){
+			font-style: italic;
+
+		}
+	}
 }
 
 iframe {
@@ -202,8 +222,8 @@ iframe {
 
 		&.more--center{
 			@include breakpoint('small') {
-    			text-align: center;
-    		}
+				text-align: center;
+			}
 		}
 	}
 }
@@ -212,10 +232,19 @@ iframe {
 
 	h3 {
 		border-top: dotted 5px lighter($gold);
+		color: lighter($purple);
+		
+		@include breakpoint('small'){
+			font-size: 1.8rem;
+		}
 	}
 
 	ul {
-		font-size: 1.2rem;
+		font-size: 1.3rem;
+
+		@include breakpoint('small') {
+			font-size: 1.5rem;
+		}
 
 	}
 
