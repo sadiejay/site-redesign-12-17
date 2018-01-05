@@ -470,9 +470,6 @@ ul {
 }
 
 .skill {
-  -webkit-box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
-  box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
-  background-color: #ececec;
   background-color: #a99bbf;
   display: grid;
   grid-template-rows: 1fr 1fr;
@@ -496,6 +493,11 @@ ul {
 .skill--list {
   grid-area: list;
   justify-self: center;
+}
+
+.skill--design, .skill--soft {
+  -webkit-box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
 }
 
 @media (min-width: 640px) {

@@ -43,7 +43,7 @@
 
 .skill {
 
-	box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
+	//box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
 	.skill--soft{
 		grid-area: soft;
 	}
@@ -73,6 +73,8 @@
 }
 
 .skill--design, .skill--soft {
+
+	box-shadow: 0 1.1px 5px 0 rgba(0, 0, 0, 0.5);
 	@include breakpoint('small') {
 		//display: flex;
 		//flex-flow: row wrap;
