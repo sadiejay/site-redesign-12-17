@@ -54,7 +54,7 @@
 
 	background-color: $purple;
 	display: grid;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: auto;
 	grid-template-columns: auto;
 	grid-row-gap: 1rem;
 	grid-template-areas:
