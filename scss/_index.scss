@@ -110,7 +110,7 @@ nav {
 		@include breakpoint('small') {
 			display: flex;
 			flex-direction: row;
-			justify-content: space-between;
+			justify-content: space-evenly;
 			align-items: baseline;
 		}
 	}
