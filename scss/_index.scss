@@ -196,15 +196,30 @@ iframe {
 		img, iframe {
 			grid-area: img;
 		}
+
+		// grid
 		overflow: hidden;
 		display: grid;
-		grid-template-columns: auto;
+		grid-template-columns: 1fr 1fr;
 		grid-gap: 20px;
 		grid-template-rows:auto;
 		grid-template-areas:
 		"title title"
-		"img about"
+		"img about";
 	}
+	
+img, iframe {
+	justify-self: center;
+}
+
+	display: grid;
+	grid-gap: 20px;
+	grid-template-rows:auto;
+	grid-template-areas:
+		"title"
+		"img"
+		"about";
+	align-items: center;
 }
 
 .more {
@@ -253,7 +268,6 @@ iframe {
 
 			@include no-underline;
 			color: $black;
-
 		}
 
 		&:hover {
