@@ -195,6 +195,7 @@ section.project {
 article {
   padding: 1rem 0rem;
   background-color: #ececec;
+  margin: 0.7rem 0;
 }
 
 article p a:link, article p a:visited, article p a:active {
