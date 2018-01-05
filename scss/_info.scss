@@ -52,7 +52,7 @@
 		grid-area: design;
 	}
 
-	background-color: lighter($grey);
+	background-color: $purple;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	grid-template-columns: auto;
