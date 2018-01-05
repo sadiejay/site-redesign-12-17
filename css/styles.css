@@ -115,7 +115,7 @@ ul li a:link, ul li a:visited, ul li a:active {
 }
 
 header, section, .more h2, .nav--button, .nav--logo, .section--title, .project--title {
-  padding: 1rem 0.5rem;
+  padding: 1rem 2.5rem;
 }
 
 main, section, ul {
@@ -185,14 +185,11 @@ section p {
   font-family: 'Open Sans', sans-serif;
   font-size: 1rem;
   line-height: 1.8rem;
+  padding: 0rem 1.2rem 1.5rem;
 }
 
 section.project {
   background-color: #ececec;
-}
-
-section.project p {
-  padding-bottom: 1.5rem;
 }
 
 article {
