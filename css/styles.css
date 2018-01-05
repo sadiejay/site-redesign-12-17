@@ -291,6 +291,11 @@ iframe {
   }
 }
 
+.contact a {
+  display: block;
+  height: 100%;
+}
+
 .contact a:link, .contact a:visited, .contact a:active {
   text-decoration: none;
   color: #0b120c;
@@ -315,7 +320,7 @@ iframe {
 .contact .mask .in--mask a, .contact .mask .gh--mask a {
   content: '';
   position: relative;
-  display: inline-block;
+  display: block;
 }
 
 .contact .mask .in--mask a:after, .contact .mask .gh--mask a:after {
