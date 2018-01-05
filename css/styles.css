@@ -311,6 +311,10 @@ iframe {
   height: 4rem;
 }
 
+.contact .mask:hover {
+  background: #d8ab6c;
+}
+
 .contact .mask .in--mask, .contact .mask .gh--mask {
   z-index: 4;
   position: relative;

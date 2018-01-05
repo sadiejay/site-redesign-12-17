@@ -269,6 +269,9 @@ iframe {
 		background: lighter($purple);
 		width: 4rem;
 		height: 4rem;
+		&:hover {
+					background: light($gold);
+				}
 
 		.in--mask, .gh--mask {
 			z-index: 4;
