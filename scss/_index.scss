@@ -5,6 +5,11 @@
 	background-color: $purple;
 }
 
+main {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
 h1, header, h3, h4, .more, .contact ul {
 	font-family: 'Zilla Slab', serif;
 }
@@ -18,11 +23,11 @@ ul {
 	color: $black;
 	align-items: flex-start;
 	@include no-bullets;
-	@include no-underline;	
+	@include no-underline;
 
 	li {
 		line-height: 2rem;
-		
+
 		&.nav--logo, &.nav--button{
 			box-shadow: 0 1.1px 5px 0 rgba(11, 18, 12, .5);
 			width: 100vw;
@@ -40,7 +45,7 @@ ul {
 				url("../images/cloud.png"),
 				url("../images/tri.png"),
 				linear-gradient(
-					to bottom right, 
+					to bottom right,
 					$purple, light($gold)
 					);
 			background-size: cover;
@@ -69,7 +74,7 @@ ul {
 
 			}
 
-			
+
 		}
 
 	}
@@ -95,7 +100,7 @@ nav {
 				url("../images/cloud.png"),
 				url("../images/tri.png"),
 				linear-gradient(
-					192deg, 
+					192deg,
 					$purple, light($gold)
 					);
 			background-size: cover;
@@ -125,7 +130,7 @@ header {
 }
 
 section {
-	
+
 	h3 {
 		font-size: 1.6rem;
 	}
@@ -134,7 +139,7 @@ section {
 		font-size: 1.4rem;
 		border-top: dotted 5px light($gold);
 	}
-	
+
 	p {
 		font-family: 'Open Sans', sans-serif;
 		font-size: 1rem;
@@ -151,7 +156,7 @@ section {
 
 article {
 	padding: 1rem 0rem;
-	background-color: lighter($grey);
+	background-color: lightest($grey);
 	margin: 0.7rem 0;
 
 	p {
@@ -209,7 +214,7 @@ iframe {
 		"title title"
 		"img about";
 	}
-	
+
 img, iframe {
 	justify-self: center;
 }
@@ -246,7 +251,7 @@ img, iframe {
 	h3 {
 		border-top: dotted 5px $gold;
 		color: lighter($purple);
-		
+
 		@include breakpoint('small'){
 			font-size: 1.8rem;
 		}
